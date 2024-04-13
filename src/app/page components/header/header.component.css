@@ -1,0 +1,61 @@
+* {
+    font-family: "Comic Sans MS", "Comic Sans";
+} /* all */
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+} /* main body */
+
+.title {
+    position: relative;
+    animation: 5s rainbow ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wavy {
+    position: relative;
+    display: inline-block;
+    animation: wave 2s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes rainbow {
+    0% {
+        color: red;
+    }
+    17% {
+        color: yellow;
+    }
+    33% {
+        color: lime;
+    }
+    50% {
+        color: cyan;
+    }
+    67% {
+        color: blue;
+    }
+    83% {
+        color: magenta;
+    }
+    100% {
+        color: red;
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(-20px);
+    }
+    75% {
+        transform: translateY(20px);
+    }
+}
