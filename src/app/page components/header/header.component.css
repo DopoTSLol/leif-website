@@ -1,5 +1,7 @@
 * {
     font-family: "Comic Sans MS", "Comic Sans";
+    justify-content: center;
+    align-items: center;
 } /* all */
 
 header {
@@ -20,6 +22,8 @@ header {
 .wavy {
     position: relative;
     display: inline-block;
+    justify-content: center;
+    align-items: center;
     animation: wave 2s ease-in-out infinite;
     animation-delay: calc(0.1s * var(--i));
 }

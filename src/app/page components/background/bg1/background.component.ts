@@ -14,27 +14,27 @@ export class BGComponent1 extends webez.EzComponent {
     //importing the main parts of the page
 
     @webez.BindStyle("a", "backgroundColor")
-    backgroundA: string = "rgb(0, 255, 187)";
+    private backgroundA: string = "rgb(0, 255, 187)";
     @webez.BindStyle("d", "backgroundColor")
-    backgroundD: string = this.backgroundA;
+    private backgroundD: string = this.backgroundA;
     @webez.BindStyle("g", "backgroundColor")
-    backgroundG: string = this.backgroundA;
+    private backgroundG: string = this.backgroundA;
     @webez.BindStyle("j", "backgroundColor")
-    backgroundJ: string = this.backgroundA;
+    private backgroundJ: string = this.backgroundA;
 
     @webez.BindStyle("b", "backgroundColor")
-    backgroundB: string = "rgb(217, 0, 255)";
+    private backgroundB: string = "rgb(217, 0, 255)";
     @webez.BindStyle("e", "backgroundColor")
-    backgroundE: string = this.backgroundB;
+    private backgroundE: string = this.backgroundB;
     @webez.BindStyle("h", "backgroundColor")
-    backgroundH: string = this.backgroundB;
+    private backgroundH: string = this.backgroundB;
 
     @webez.BindStyle("c", "backgroundColor")
-    backgroundC: string = "rgb(255, 204, 0)";
+    private backgroundC: string = "rgb(255, 204, 0)";
     @webez.BindStyle("f", "backgroundColor")
-    backgroundF: string = this.backgroundC;
+    private backgroundF: string = this.backgroundC;
     @webez.BindStyle("i", "backgroundColor")
-    backgroundI: string = this.backgroundC;
+    private backgroundI: string = this.backgroundC;
     //colors for moving background
 
     constructor() {
