@@ -8,6 +8,7 @@ import { BodyComponent } from "./page components/body/body.component";
 import { AsideComponent } from "./page components/aside/aside.component";
 import { FooterComponent } from "./page components/footer/footer.component";
 import { OptionsComponent } from "./page components/options/options.component";
+import { BGComponent1 } from "./page components/background/bg1/background.component";
 //html file imports
 
 /**
@@ -21,31 +22,8 @@ export class MainComponent extends webez.EzComponent {
     private aside: AsideComponent = new AsideComponent();
     private footer: FooterComponent = new FooterComponent();
     private options: OptionsComponent = new OptionsComponent();
+    private bg: BGComponent1 = new BGComponent1();
     //importing the main parts of the page
-
-    @webez.BindStyle("a", "backgroundColor")
-    backgroundA: string = "rgb(0, 255, 187)";
-    @webez.BindStyle("d", "backgroundColor")
-    backgroundD: string = this.backgroundA;
-    @webez.BindStyle("g", "backgroundColor")
-    backgroundG: string = this.backgroundA;
-    @webez.BindStyle("j", "backgroundColor")
-    backgroundJ: string = this.backgroundA;
-
-    @webez.BindStyle("b", "backgroundColor")
-    backgroundB: string = "rgb(217, 0, 255)";
-    @webez.BindStyle("e", "backgroundColor")
-    backgroundE: string = this.backgroundB;
-    @webez.BindStyle("h", "backgroundColor")
-    backgroundH: string = this.backgroundB;
-
-    @webez.BindStyle("c", "backgroundColor")
-    backgroundC: string = "rgb(255, 204, 0)";
-    @webez.BindStyle("f", "backgroundColor")
-    backgroundF: string = this.backgroundC;
-    @webez.BindStyle("i", "backgroundColor")
-    backgroundI: string = this.backgroundC;
-    //colors for moving background
 
     constructor() {
         super(html, css);
@@ -54,20 +32,11 @@ export class MainComponent extends webez.EzComponent {
         this.addComponent(this.aside, "aside");
         this.addComponent(this.footer, "footer");
         this.addComponent(this.options, "options");
+        this.addComponent(this.bg, "bg1");
     } //constructor that adds all of the main elements of the page
 
-    @webez.Timer(0.1)
-    updateStyle() {
-        this.backgroundA = this.options.getThemeColors()[0];
-        this.backgroundB = this.options.getThemeColors()[1];
-        this.backgroundC = this.options.getThemeColors()[2];
-        //sets the background color variables to the theme colors
-        this.backgroundD = this.backgroundA;
-        this.backgroundG = this.backgroundA;
-        this.backgroundJ = this.backgroundA;
-        this.backgroundE = this.backgroundB;
-        this.backgroundH = this.backgroundB;
-        this.backgroundF = this.backgroundC;
-        this.backgroundI = this.backgroundC;
+    @webez.Timer(0)
+    update() {
+        this.bg.getOptions(this.options);
     }
 }
