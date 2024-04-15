@@ -13,6 +13,15 @@ export class OptionsComponent extends webez.EzComponent {
         "rgb(255, 204, 0)",
     ];
 
+    private themeBody: string[] = [
+        "rgba(0, 115, 84, 0.5)",
+        "rgb(0, 255, 187)",
+        "rgba(217, 0, 255, 0.5)",
+        "rgb(217, 0, 255)",
+        "rgba(255, 204, 0, 0.5)",
+        "rgb(255, 204, 0)",
+    ];
+
     constructor() {
         super(html, css);
     } //basic constructor
@@ -30,11 +39,8 @@ export class OptionsComponent extends webez.EzComponent {
     */
     private changeBackgroundTheme(v: webez.ValueEvent) {
         this.themeSelect = v.value;
-        let themeColors: string[] = [
-            "rgb(0, 255, 187)",
-            "rgb(217, 0, 255)",
-            "rgb(255, 204, 0)",
-        ]; //definition of local variable
+        let themeColors: string[] = this.themeColors; //definition of local variable
+        let themeBody: string[] = this.themeBody;
 
         if (this.themeSelect === "cmyk") {
             themeColors = [
@@ -42,6 +48,7 @@ export class OptionsComponent extends webez.EzComponent {
                 "rgb(217, 0, 255)",
                 "rgb(255, 204, 0)",
             ]; //cmyk theme
+            themeBody = [];
         } else if (this.themeSelect === "rgb") {
             themeColors = [
                 "rgb(255, 75, 30)",
@@ -87,9 +94,14 @@ export class OptionsComponent extends webez.EzComponent {
         }
 
         this.themeColors = themeColors;
+        this.themeBody = themeBody;
     }
 
     public getThemeColors(): string[] {
         return this.themeColors;
+    }
+
+    public getThemeBody(): string[] {
+        return this.themeBody;
     }
 }
