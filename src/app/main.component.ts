@@ -38,5 +38,6 @@ export class MainComponent extends webez.EzComponent {
     @webez.Timer(0)
     update() {
         this.bg.getOptions(this.options);
+        this.body.updateStyle(this.options);
     }
 }
