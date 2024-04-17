@@ -1,17 +1,18 @@
-footer {
+.footer {
     justify-content: center;
     position: absolute;
     align-items: center;
     display: flex;
     text-align: center;
-    background-color: aqua;
+    background-color: rgb(142, 142, 142);
     bottom: 0;
     left: 0;
     width: 100%;
+    overflow: hidden;
 }
 
 .animate {
-    position: relative;
-    animation: animate 10s linear infinite;
+    position: fixed;
+    animation: animates 10s linear infinite;
     display: inline-block;
 }
